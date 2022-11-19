@@ -1,0 +1,91 @@
+<div class="form-content">
+    <div class="form-head"  >
+        <span> PERSON ADDRESS FORM </span>
+        <img class="form-head-image" src="../assets/cancel.jpeg" alt="logo" (click)="onCancel()">
+    </div>
+    <form class="form" [formGroup]="addressGroup"  >
+        <!-- <label class="label text" for="name">Name</label>
+        <div class="row-content">
+            <input class="name" type="text" id="name" name="name" placeholder="Enter Name" formControlName="name" ngDefaultControl required>
+            
+        </div> -->
+
+   
+        <mat-label class="label text">FullName</mat-label>
+        <div class="row-content">
+        <mat-form-field class="input" appearance="outline" >
+          <input  id="fullname" name="fullname" matInput  formControlName="fullname"  ngDefaultControl required>
+            </mat-form-field>
+        </div>
+
+
+        <mat-label class="label text">Phone</mat-label>
+        <div class="row-content">
+        <mat-form-field class="input" appearance="outline" >
+          <input  id="phone" name="phone" matInput  formControlName="phone"  ngDefaultControl required>
+            </mat-form-field>
+        </div>
+
+     
+
+
+        <mat-label class="label text"> Address</mat-label>
+        <div class="row-content">
+        <mat-form-field class="input" appearance="outline">
+          <textarea type="text" id="address" name="address" rows="4" matInput placeholder="Enter Address"  formControlName="address" ngDefaultControl required></textarea>
+            </mat-form-field>
+        </div>
+        <div className="row_content">
+            <div className="column_constrains">
+                <div className="column_content">
+                    <label htmlFor="city" className="label text">City</label>
+                    <br/>
+                        <select name="city" id="city" value={formValue.city} onChange={changeValue}>
+                            <option selected disabled hidden value="Select City">Select City</option>
+                            <option value="Kurnool">Kurnool</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                </div>
+
+
+        <div className="column_content">
+            <label htmlFor="state" className="label text">State</label>
+            <br/>
+                <select name="state" id="state" value={formValue.state} onChange={changeValue}>
+                    <option selected disabled hidden value="Select State">Select State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                </select>
+        </div>
+            
+    
+            <div class="input-content">
+            <mat-label class="labeltext" for="zip">ZipCode</mat-label>
+             <div class="row-content">
+            <mat-form-field  class=""  appearance="outline">
+              <input  type="text" id="zip" name="name" matInput   formControlName="zip" ngDefaultControl required>
+                </mat-form-field>
+            </div> 
+        </div>
+
+
+        </div>
+
+        <div class="buttonParent">
+            <div class="add-reset">
+                <button  mat-button type="submit" class="button addButton" *ngIf="this.Id==null" type="submit" id="addButton" (click)="submit()" >Add</button>
+                
+                <button  mat-button type="update" class="button submitButton" type="update" *ngIf="this.Id!=null"  id="update" (click)="updateData()" > Update </button>&nbsp;&nbsp;
+                <button  mat-button type="reset" class="resetButton button" id="resetButton">Reset</button>
+            </div>
+        </div>
+    
+</div>
